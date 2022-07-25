@@ -4,6 +4,7 @@
 class SevenSegmentDisplay{
     public:
     int pins[7];
+    int dp; 
     byte chars[28][8] = {
         //{'v', a, b, c, d, e, f, g} // Format: v --> value
         {'0', 1, 1, 1, 1, 1, 1, 0}, // 0 
@@ -35,6 +36,7 @@ class SevenSegmentDisplay{
         {'t', 0, 0, 0, 1, 1, 1, 1}, // 26  
         {'U', 0, 1, 1, 1, 1, 1, 0}, // 27  
     };
+
     void init(int a, int b, int c, int d, int e, int f, int g, int dpPin);
     void setState(int state=LOW);
     void writeChar(byte value);
