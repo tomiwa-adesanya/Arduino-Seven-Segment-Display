@@ -1,6 +1,6 @@
 #include"SevenSegmentDisplay.h"
 
-void SevenSegmentDisplay::init(int a, int b, int c, int d, int e, int f, int g, int dpPin){
+void SevenSegmentDisplay::begin(int a, int b, int c, int d, int e, int f, int g, int dpPin){
     // initializes attributes of class and configures pin mode of each pin. To be called in the setup() function
     pins[0] = a,
     pins[1] = b,

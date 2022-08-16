@@ -40,7 +40,7 @@ class SevenSegmentDisplay{
     };
     
     public:
-    void init(int a, int b, int c, int d, int e, int f, int g, int dpPin);
+    void begin(int a, int b, int c, int d, int e, int f, int g, int dpPin);
     void setState(int state=LOW);
     void createChar(byte customCharacters[]);
     void writeCustomChar(byte value);
