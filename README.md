@@ -17,20 +17,19 @@ The 7 LED Segments are arranged in a way to show specific decimal numerals or ch
   * Pin 9 lights up the "f" LED segment.
   * Pin 10 lights up the "g" LED segment.
   * Pin 5 lights up the "dp" LED segment.
-  * Pins 3 and 8 are referred to as common(COM) pins. Either of them can be used 
+  * Pins 3 and 8 are referred to as common(COM) pins. Either of them can be used.
   
   The LED arrangement form an figure 8 which makes it possible to display all decimal numeric characters from 0 to 9.
   To display "1" on the display device for example, simply set the digital state of pins 7 and 6 to High. 
   
- # SevenSegmentDisplay class
+ #About SevenSegmentDisplay library
   
- SevenSegmentDisplay class is an arduino sketch class that has several methods to automate the process of writing characters to the seven 
- segment display device. 
+ SevenSegmentDisplay library is an arduino library that contains a SevenSegmentDisplay class with defined methods to automate the process of writing
+ characters and values to a Seven Segment display device.
   
  Methods of class include:
- * `init(int a, int b, int c, int d, int e, int f, int g, int dpPin)` : this method is called in the setup function body.
-  It sets the arduino pins the LED segments **a to g** and the **datapoint** LED segment are all connected to and sets up pinMode of each pin as OUTPUT 
-  pins.
+ * `begin(int a, int b, int c, int d, int e, int f, int g, int dpPin)` :initializes attributes of class and configures pin mode of each pin. 
+  To be called in the setup() function.
  * `setState(int state=LOW)` : sets the state of all 7 LEDs to the same state. HIGH to turn all LEDs on and LOW to turn all LEDs off.
  * `createChar(byte customChar[])` : creates and stores user customised character that can be displayed on the device.
  * `writeCustomChar(byte value)` : displays stored user customised character on the device.
