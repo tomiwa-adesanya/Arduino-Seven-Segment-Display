@@ -53,3 +53,24 @@ void SevenSegmentDisplay::writeString(String value, int delayPeriod){
         setState();
     }
 }
+
+void SevenSegmentDisplay::createChar(byte customCharacters[]){
+    // Creates user customised character that can be written to Seven Segment Display character
+    for (int index=0; index < 8; index++){
+        this->customisedChars[this->customisedCharsSize][index] = customCharacters[index]; 
+    }
+    this->customisedCharsSize++;
+}
+
+void SevenSegmentDisplay::writeCustomChar(byte value){
+    for (int i=0; i<this->customisedCharsSize; i++){
+        if(this->customisedChars[i][0] == value){
+            for (int index=0; index<7; index++){
+                int pin = pins[index];
+                int v = this->customisedChars[i][index+1];
+                digitalWrite(pin, v);
+            }
+            break;
+        }
+    }
+}

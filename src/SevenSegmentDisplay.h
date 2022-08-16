@@ -2,7 +2,9 @@
 #define SevenSegmentDisplay_H
 
 class SevenSegmentDisplay{
-    public:
+    private:
+    int customisedCharsSize = 0;
+    int customisedChars[15][8]; // Array to store customised character with a limit of 15 customised characters
     int pins[7];
     int dp; 
     byte chars[28][8] = {
@@ -36,9 +38,12 @@ class SevenSegmentDisplay{
         {'t', 0, 0, 0, 1, 1, 1, 1}, // 26  
         {'U', 0, 1, 1, 1, 1, 1, 0}, // 27  
     };
-
+    
+    public:
     void init(int a, int b, int c, int d, int e, int f, int g, int dpPin);
     void setState(int state=LOW);
+    void createChar(byte customCharacters[]);
+    void writeCustomChar(byte value);
     void writeChar(byte value);
     void writeString(String value, int delayPeriod=1500);
 };
