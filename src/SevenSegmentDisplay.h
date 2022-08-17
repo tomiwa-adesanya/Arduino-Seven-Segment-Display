@@ -121,7 +121,7 @@ void SevenSegmentDisplay::createCustomChar(byte customCharacters[]){
      Custom char is assigned a character(e.g 'v','+', e.t.c) or an int (e.g 1, 10, e.t.c)
      The assigned character is used to refer to the customised character in the .writeCustomChar() method to display character on the device.
      The assigned character should be first on the byte array passed as argument.
-     byte array should be of length, with the remaining 7 values as the state value (0 or 1) to be written to each of the seven segments (a to g) respectively
+     byte array should be of length 8, with the remaining 7 values as the state value (0 or 1) to be written to each of the seven segments (a to g) respectively
     */ 
     for (int index=0; index < 8; index++){
         this->customisedChars[this->customisedCharsSize][index] = customCharacters[index]; 
