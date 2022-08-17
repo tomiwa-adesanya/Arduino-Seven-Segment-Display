@@ -60,8 +60,7 @@ Required components:
   * Arduino Uno
 
   
-First of all download the [zip file](), and install it with your [arduino IDE](#how-to-install-an-arduino-library-in-arduino-ide) 
-  
+First of all download the [zip file](), and install it with an Arduino IDE. Click [how to install arduino libraries](#how-to-install-an-arduino-library-in-arduino-ide) to learn how to do so.
 
 Within your Arduino sketch: 
  
