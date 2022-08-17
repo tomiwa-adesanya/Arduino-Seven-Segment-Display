@@ -68,7 +68,7 @@ Within your Arduino sketch:
 #include<SevenSegmentDisplay.h>
 
 /*
-  variables a - g, and dp should be replace by their actual pin values
+  variables a - g, and dp should be replaced by their following pin values
 */
 
 #define a 0 
