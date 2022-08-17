@@ -17,7 +17,7 @@
 SevenSegmentDisplay device;
 
 void setup(){
-    device.begin(
+    device.init(
         a, b, c, d, e, f, g, dp
     )
 }
