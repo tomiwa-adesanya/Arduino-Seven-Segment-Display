@@ -22,24 +22,37 @@ The 7 LED Segments are arranged in a way to show specific decimal numerals or ch
   The LED arrangement form an figure 8 which makes it possible to display all decimal numeric characters from 0 to 9.
   To display "1" on the display device for example, simply set the digital state of pins 7 and 6 to High. 
   
- #About SevenSegmentDisplay library
+# About SevenSegmentDisplay library
   
- SevenSegmentDisplay library is an arduino library that contains a SevenSegmentDisplay class with defined methods to automate the process of writing
- characters and values to a Seven Segment display device.
+SevenSegmentDisplay library is an arduino library that contains a SevenSegmentDisplay class with defined methods to automate the process of writing characters and values to a Seven Segment display device.
+
+SevenSegmentDisplay comes with 28 predefined characters that can be displayed on a Seven Segment device without having to customise them yourself
+
+    The predefined characters are: 
+
+        Decimal numerals: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+        
+        Alphabets(case-sensitive): A, b, C, d, E, F, H, I, J, L, n, O, P, q, r, S, t, U
   
- Methods of class include:
- * `begin(int a, int b, int c, int d, int e, int f, int g, int dpPin)` :initializes attributes of class and configures pin mode of each pin. 
-  To be called in the setup() function.
- * `setState(int state=LOW)` : sets the state of all 7 LEDs to the same state. HIGH to turn all LEDs on and LOW to turn all LEDs off.
- * `createChar(byte customChar[])` : creates and stores user customised character that can be displayed on the device.
- * `writeCustomChar(byte value)` : displays stored user customised character on the device.
- * `writeChar(byte value)` : displays built-in character on the display device.
- * `writeString(String value, int delayPeriod)` : displays characters of a String value one at a time with a periodic gap between each character displayed.
-  The time period/delay is specified by the delayPeriod argument.
+SevenSegmentDisplay object methods include:
+* `init(int a, int b, int c, int d, int e, int f, int g, int dpPin)` initializes attributes of class and configures pin mode of each pin. To be called in the setup() function.
+* `setState(int state=LOW)` sets state all pins of the Seven Segment device to the same value. Value can either be LOW(0) or HIGH(1). 
+* `createCustomChar(byte customCharacters[])` Creates user customised character that can be displayed on a Seven Segment Display device.
+
+  Custom char is assigned a character(e.g 'v','+', e.t.c) or an int (e.g 1, 10, e.t.c) which is placed at index 0 of customCharacters[] passed as argument.
   
- ## Getting started
+  The assigned character is used to refer to the customised character in the .writeCustomChar() method to display character on the device.
   
- Required components:
+  byte array should be of length 8, with the remaining 7 values(index 1 to 7) as the state value (0 or 1) to be written to each of the seven segments (a to g) respectively.
+* `writeCustomChar(byte value)` Displays customised character to device using the value assigned to the customised character.
+* `writeChar(byte value)` displays a single character on device. This method is implemented by the writeString method to display multiple characters.
+* `writeString(String value, int delayPeriod)` Displays each character in string value one at a time with a delay period inbetween each charcter displayed. 
+
+  Note that there is a limit to the characters that can be displayed by a seven segment display device, for example it'd be impossible to display alphabet 'K'
+  
+## Getting started
+  
+Required components:
   * Seven Segment display device
   * Resistor (220 Ohms)
   * Jumper wires
@@ -47,14 +60,19 @@ The 7 LED Segments are arranged in a way to show specific decimal numerals or ch
   * Arduino Uno
 
   
-First of all download the [zip file](), and add it to your Arduino sketch. 
+First of all download the [zip file](), and install it. 
   
+
 Within your Arduino sketch: 
  
 ```cpp
 #include<SevenSegmentDisplay.h>
 
-#define a 0
+/*
+  variables a - g, and dp should be replace by their actual pin values
+*/
+
+#define a 0 
 #define b 0
 #define c 0 
 #define d 0
@@ -65,25 +83,22 @@ Within your Arduino sketch:
  
 SevenSegmentDisplay device;
 
-/*To create customised character
-   --
-     |
-   --
-     |
-   --
-   
-   NOTE: this character is already included in the class and doesn't actually have to be redefined. This is just an example.
+/*
+  To create customised character '-'
 */
-byte custom1[] = {'3', 1, 1, 1, 1, 0, 0, 1}; 
+byte custom1[] = {'-', 0, 0, 0, 0, 0, 0, 1}; 
  
 void setup(){
   device.init(a, b, c, d, e, f, g, dp);
 }
 
 void loop(){
-  device.writeChar('3'); // Display custom1
+  device.writeChar('-'); // Display custom1
   delay(2500);
   device.setState(LOW); // Turns off all LED after 2.5 seconds;
   device.writeString("HELLO", 2500); // Displays characters H E L L O to device with a 2.5 seconds gap
+  delay(2500);
+  device.setState(LOW);
+  delay(2500);
 } 
 ```
