@@ -28,10 +28,10 @@ SevenSegmentDisplay library is an arduino library that contains a SevenSegmentDi
 
 SevenSegmentDisplay comes with 28 predefined characters that can be displayed on a Seven Segment device without having to customise them yourself
 
-    The predefined characters are: 
+    The predefined characters that can be displayed include: 
 
         Decimal numerals: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
-        
+
         Alphabets(case-sensitive): A, b, C, d, E, F, H, I, J, L, n, O, P, q, r, S, t, U
   
 SevenSegmentDisplay object methods include:
@@ -60,7 +60,7 @@ Required components:
   * Arduino Uno
 
   
-First of all download the [zip file](), and install it. 
+First of all download the [zip file](), and install it with your [arduino IDE](#how-to-install-an-arduino-library-in-arduino-ide) 
   
 
 Within your Arduino sketch: 
@@ -102,3 +102,17 @@ void loop(){
   delay(2500);
 } 
 ```
+
+## How to install an Arduino library in Arduino IDE
+
+Step 1: 
+
+![in your Arduino IDE toolbar click Sketch](/images/installation-step1.png)
+
+Step 2:
+
+![select add "Include Library" the "add .zip Library"](/images/installation-step2.png)
+
+Step 3:
+
+![navigate to library directory, select library and click "open"](/images/installation-step3.png)
