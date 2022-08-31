@@ -6,7 +6,7 @@ The 7 LED Segments are arranged in a way to show specific decimal numerals or ch
 
 ## Diagram of a Seven Segement display Device
 
-![seven-segment-device](/images/diagram.png)
+![seven-segment-device](/data/images/diagram.png)
 
   Based on the diagram of the Seven Segment display device above:
   * Pin 7 lights up the "a" LED segment.
@@ -60,7 +60,7 @@ Required components:
   * Arduino Uno
 
   
-First of all download the [zip file](), and install it with an Arduino IDE. Click [how to install arduino libraries](#how-to-install-an-arduino-library-in-arduino-ide) to learn how to do so.
+First of all download the [zip file](), and install it with an Arduino IDE. Navigate to [how to install arduino libraries](#how-to-install-an-arduino-library-in-arduino-ide) to learn how to do so.
 
 Within your Arduino sketch: 
  
@@ -106,12 +106,12 @@ void loop(){
 
 Step 1: 
 
-![in your Arduino IDE toolbar click Sketch](/images/installation-step1.png)
+![in your Arduino IDE toolbar click Sketch](/data/images/installation-step1.png)
 
 Step 2:
 
-![select add "Include Library" the "add .zip Library"](/images/installation-step2.png)
+![select add "Include Library" the "add .zip Library"](/data/images/installation-step2.png)
 
 Step 3:
 
-![navigate to library directory, select library and click "open"](/images/installation-step3.png)
+![navigate to library directory, select library and click "open"](/data/images/installation-step3.png)
