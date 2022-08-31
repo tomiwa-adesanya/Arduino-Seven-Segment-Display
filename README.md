@@ -56,7 +56,7 @@ Connect Seven Segment pins to arduino board. The schematic below shows the pin c
 
 ![Seven Segment Display schematics](/data/images/schematics.png)
 
-Download the [library zip file](/data/SevenSegmentDisplay.zip), and install it in your Arduino IDE. Navigate to [how to install arduino libraries](#how-to-install-an-arduino-library-in-arduino-ide) to learn how to do so.
+Download the [library zip file](https://github.com/tomiwa-adesanya/Arduino-Seven-Segment-Display/raw/master/data/SevenSegmentDisplay.zip), and install it in your Arduino IDE. Navigate to [how to install arduino libraries](#how-to-install-an-arduino-library-in-arduino-ide) to learn how to do so.
 
 
 Within your Arduino sketch: 
@@ -90,7 +90,7 @@ void setup(){
 }
 
 void loop(){
-  device.writeCustomChar('-'); // Display custom1
+  device.writeCustomChar('-'); // Displays custom1
   delay(2500);
   device.setState(LOW); // Turns off all LED after 2.5 seconds;
   device.writeString("HELLO", 2500); // Displays characters H E L L O to device with a 2.5 seconds interval
