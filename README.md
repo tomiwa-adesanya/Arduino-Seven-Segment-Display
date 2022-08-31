@@ -52,15 +52,12 @@ SevenSegmentDisplay object methods include:
   
 ## Getting started
   
-Required components:
-  * Seven Segment display device
-  * Resistor (220 Ohms)
-  * Jumper wires
-  * Breadboard
-  * Arduino Uno
+Connect Seven Segment pins to arduino board. The schematic below shows the pin connections for the ino sketch of this tutorial.
 
-  
-First of all download the [zip file](), and install it with an Arduino IDE. Navigate to [how to install arduino libraries](#how-to-install-an-arduino-library-in-arduino-ide) to learn how to do so.
+![Seven Segment Display schematics](/data/images/schematics.png)
+
+Download the [libary zip file](/data/SevenSegmentDisplay.zip), and install it in your Arduino IDE. Navigate to [how to install arduino libraries](#how-to-install-an-arduino-library-in-arduino-ide) to learn how to do so.
+
 
 Within your Arduino sketch: 
  
@@ -71,14 +68,14 @@ Within your Arduino sketch:
   variables a - g, and dp should be replaced by their following pin values
 */
 
-#define a 0 
-#define b 0
-#define c 0 
-#define d 0
-#define e 0
-#define f 0
-#define g 0
-#define dp 0
+#define a 2 
+#define b 3
+#define c 4 
+#define d 5
+#define e 6
+#define f 7
+#define g 8
+#define dp 9
  
 SevenSegmentDisplay device;
 
