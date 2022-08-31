@@ -86,10 +86,11 @@ byte custom1[] = {'-', 0, 0, 0, 0, 0, 0, 1};
  
 void setup(){
   device.init(a, b, c, d, e, f, g, dp);
+  device.createCustomChar(custom1)
 }
 
 void loop(){
-  device.writeChar('-'); // Display custom1
+  device.writeCustomChar('-'); // Display custom1
   delay(2500);
   device.setState(LOW); // Turns off all LED after 2.5 seconds;
   device.writeString("HELLO", 2500); // Displays characters H E L L O to device with a 2.5 seconds interval
