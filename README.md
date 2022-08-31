@@ -19,7 +19,7 @@ The 7 LED Segments are arranged in a way to show specific decimal numerals or ch
   * Pin 5 lights up the "dp" LED segment.
   * Pins 3 and 8 are referred to as common(COM) pins. Either of them can be used.
   
-  The LED arrangement form an figure 8 which makes it possible to display all decimal numeric characters from 0 to 9.
+  The LED arrangement forms figure 8 which makes it possible to display all decimal numeric characters from 0 to 9.
   To display "1" on the display device for example, simply set the digital state of pins 7 and 6 to High. 
   
 # About SevenSegmentDisplay library
@@ -37,16 +37,16 @@ SevenSegmentDisplay comes with 28 predefined characters that can be displayed on
 SevenSegmentDisplay object methods include:
 * `init(int a, int b, int c, int d, int e, int f, int g, int dpPin)` initializes attributes of class and configures pin mode of each pin. To be called in the setup() function.
 * `setState(int state=LOW)` sets state all pins of the Seven Segment device to the same value. Value can either be LOW(0) or HIGH(1). 
-* `createCustomChar(byte customCharacters[])` Creates user customised character that can be displayed on a Seven Segment Display device.
+* `createCustomChar(byte customCharacters[])` creates user customised character that can be displayed on a Seven Segment Display device.
 
   Custom char is assigned a character(e.g 'v','+', e.t.c) or an int (e.g 1, 10, e.t.c) which is placed at index 0 of customCharacters[] passed as argument.
   
   The assigned character is used to refer to the customised character in the .writeCustomChar() method to display character on the device.
   
   byte array should be of length 8, with the remaining 7 values(index 1 to 7) as the state value (0 or 1) to be written to each of the seven segments (a to g) respectively.
-* `writeCustomChar(byte value)` Displays customised character to device using the value assigned to the customised character.
+* `writeCustomChar(byte value)` displays customised character to device using the value assigned to the customised character.
 * `writeChar(byte value)` displays a single character on device. This method is implemented by the writeString method to display multiple characters.
-* `writeString(String value, int delayPeriod)` Displays each character in string value one at a time with a delay period inbetween each charcter displayed. 
+* `writeString(String value, int delayPeriod)` displays each character in string value one at a time with a delay period inbetween each charcter displayed. 
 
   Note that there is a limit to the characters that can be displayed by a seven segment display device, for example it'd be impossible to display alphabet 'K'
   
